@@ -17,6 +17,27 @@ body{
 
 .header{
     grid-row: 1/2;
+
+    display:grid;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 1fr;
+
+    align-items: center;
+
+}
+
+.logo{
+    margin: 0 0 0 10px;
+    height: 80px;
+    width: 80px;
+    border: 1px solid white;
+}
+
+.title{
+    margin: 0 0 0 20px;
+    color:white;
+    font-size: 50px;
+    font-weight: 800;
 }
 
 .main{
@@ -28,16 +49,117 @@ body{
     grid-template-rows: 1fr;
 }
 
-.leftnav{
+.nav{
     grid-column: 1/2;
-    background-color: slategray;
+    background-color: rgb(219, 219, 219);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 40px 1fr;
 }
 
-.content{
-    grid-column: 2/3;
+
+.defaultProjects{
+/*
+    border: 1px solid blue;
+*/
 }
+
+.inboxRow, .todayRow, .thisWeekRow, .placeholderProject, .addProjectRow{
+    display:grid;
+    grid-template-columns: 20px 20px 1fr;
+    margin: 0 0 15px 0;
+    align-items: center;
+}
+
+.inboxRow{
+    margin: 30px 0 15px 0;
+}
+
+#inbox:hover{
+    cursor: pointer;
+}
+
+.defaultProjText{
+    grid-column: 3/4;
+    color: rgb(70, 79, 88);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 0 15px;
+}
+
+.img{
+    margin: 0 0 0 20px;
+    height: 20px;
+    width: 20px; 
+    border: 1px solid white;
+}
+
+.imgBody{
+    margin: 0 0 0 20px;
+    height: 20px;
+    width: 20px; 
+    border: 1px solid slategray;
+}
+
+.projectsTitle{
+    padding: 0 0 0 20px;
+
+    color: rgb(70, 79, 88);
+    font-size: 25px;
+    /*
+    border: 1px solid green;
+    */
+    display:grid;
+    align-items: center;
+    margin: 0 0 0 0;
+}
+
+.userProjects{
+    /*
+    border: 1px solid red;
+    */
+}
+
+
+.placeholderProject{
+    margin: 20px 0 15px 0;
+
+}
+
+
+
+#content{
+    grid-column: 2/3;
+    display: grid;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.contentBody{
+    display:grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20px 1fr 20px;
+
+    width: 500px;
+    height: 80vh;
+    background-color: rgb(233, 233, 233);
+}
+
+.
 
 .footer{
     grid-row: 3/4;
+
+    display:grid;
+    justify-content: center;
+    align-content: center
 }
+
+.footerText{
+    color:white;
+}
+
+
 
