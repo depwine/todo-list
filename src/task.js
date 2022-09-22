@@ -13,20 +13,24 @@ export var task = function(){
             alert("Please fill out the task");
             return;
         }
+
+        const task_el = document.getElementById("tasks");
+
+        const single_task_el = document.createElement("div");
+            single_task_el.classList.add("single-task");
+
+
+
         
-        const task_el = document.getElementById("tasks")
-    
         const task_content_el = document.createElement("div");
         task_content_el.classList.add("content");
-    
-        task_el.appendChild(task_content_el);
-    
+
         const task_input_el = document.createElement(`input`);
         task_input_el.type = "text";
         task_input_el.classList.add("text");
         task_input_el.value = task;
-        task_input_el.setAttribute(`readonly`, `readonly`);
-    
+        task_input_el.setAttribute(`readonly`, `readonly`);    
+        
         task_content_el.appendChild(task_input_el);
     
         const task_actions_el = document.createElement("div");
@@ -40,12 +44,41 @@ export var task = function(){
         task_delete_el.classList.add("delete");
         task_delete_el.innerHTML = "Delete";
     
+        
         task_actions_el.appendChild(task_edit_el);
         task_actions_el.appendChild(task_delete_el);
     
-        task_el.appendChild(task_actions_el);
+        single_task_el.appendChild(task_content_el);
+        single_task_el.appendChild(task_actions_el);
+        task_el.appendChild(single_task_el);
+
+
+
+        input.value = "";
+        
     
-        list_el.appendChild(task_el);
+        
+        task_edit_el.addEventListener(`click`, () => {
+
+            if (task_edit_el.innerText.toLowerCase() == "edit"){
+                task_input_el.removeAttribute(`readonly`);
+                task_input_el.focus();
+                task_edit_el.innerText = "Save";
+            } else {
+                task_input_el.setAttribute(`readonly`, `readonly`);   
+                task_edit_el.innerText = "Edit";
+            }
+            
+        })
+        
+
+        
+        task_delete_el.addEventListener(`click`, () => {
+            task_el.removeChild(single_task_el);            
+        })
+        
+        
+
       })
 
 }

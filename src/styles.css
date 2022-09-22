@@ -212,7 +212,7 @@ input, button{
 }
 
 .text:not(:read-only){
-    color: var(--light-font);
+    color: black;
 }
 
 #tasks{
@@ -220,12 +220,21 @@ input, button{
     grid-row: 1/2;
 
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
     align-items: center;
 
     row-gap: 5px;
+}
+
+.single-task{
+
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    align-items: center;
 }
 
 .h2-index{

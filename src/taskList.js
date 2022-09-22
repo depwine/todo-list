@@ -8,11 +8,13 @@ export var taskHeader = function(){
 
     const taskForm = document.createElement("form");
     taskForm.setAttribute(`id`, `new-task-form`);
+    taskForm.value = "";
     
     const textInput = document.createElement("input");
     textInput.setAttribute(`type`, `text`);
     textInput.setAttribute(`id`, `new-task-input`);
     textInput.setAttribute(`placeholder`, `What are you planning?`);
+    textInput.value = "";
 
     const textSubmit = document.createElement(`input`);
     textSubmit.setAttribute(`type`, `submit`);
@@ -45,6 +47,9 @@ export var taskList = function(){
     const tasks = document.createElement("div");
     tasks.setAttribute(`id`, `tasks`);
 
+    const single_task_el = document.createElement("div");
+    single_task_el.classList.add('single-task');
+    
         //content
     const taskContent = document.createElement(`div`);
     taskContent.classList.add(`content`);
@@ -52,14 +57,14 @@ export var taskList = function(){
     const taskInput = document.createElement(`input`);
     taskInput.setAttribute(`type`, `text`);
     taskInput.classList.add(`text`);
-    taskInput.setAttribute(`value`, `default task: go to zoo`);
-    taskInput.setAttribute(`readonly`, ``);
+    taskInput.setAttribute(`value`, `default task: delete me if you want`);
+    taskInput.setAttribute(`readonly`, `readonly`);
 
     contentBody.appendChild(tasksHeader);
     taskList.appendChild(tasks);
 
     taskContent.appendChild(taskInput);
-    tasks.appendChild(taskContent);
+    single_task_el.appendChild(taskContent);
     
         contentBody.appendChild(taskList);
         content.appendChild(contentBody);
@@ -79,7 +84,12 @@ export var taskList = function(){
 
     actions.appendChild(editButton);
     actions.appendChild(deleteButton);
-
-        tasks.appendChild(actions);
+    
+        single_task_el.appendChild(actions);
+        tasks.appendChild(single_task_el);
         content.appendChild(contentBody);
+
+        deleteButton.addEventListener(`click`, () => {
+            tasks.removeChild(single_task_el);            
+        })
 }
