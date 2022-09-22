@@ -2,30 +2,30 @@ export var taskHeader = function(){
 
     const content = document.getElementById("content");
 
-    const contentBody = document.createElement(`div`);
-    contentBody.setAttribute(`id`, `content-body`);
+    const content_body_el = document.createElement(`div`);
+    content_body_el.setAttribute(`id`, `content-body`);
         //Add Task Form
 
-    const taskForm = document.createElement("form");
-    taskForm.setAttribute(`id`, `new-task-form`);
-    taskForm.value = "";
+    const task_form_el = document.createElement("form");
+    task_form_el.setAttribute(`id`, `new-task-form`);
+    task_form_el.value = "";
     
-    const textInput = document.createElement("input");
-    textInput.setAttribute(`type`, `text`);
-    textInput.setAttribute(`id`, `new-task-input`);
-    textInput.setAttribute(`placeholder`, `What are you planning?`);
-    textInput.value = "";
+    const text_input_el = document.createElement("input");
+    text_input_el.setAttribute(`type`, `text`);
+    text_input_el.setAttribute(`id`, `new-task-input`);
+    text_input_el.setAttribute(`placeholder`, `What are you planning?`);
+    text_input_el.value = "";
 
-    const textSubmit = document.createElement(`input`);
-    textSubmit.setAttribute(`type`, `submit`);
-    textSubmit.setAttribute(`id`, `new-task-submit`);
-    textSubmit.setAttribute(`value`, `Add Task`);
+    const text_submit_el = document.createElement(`input`);
+    text_submit_el.setAttribute(`type`, `submit`);
+    text_submit_el.setAttribute(`id`, `new-task-submit`);
+    text_submit_el.setAttribute(`value`, `Add Task`);
 
-    taskForm.appendChild(textInput);
-    taskForm.appendChild(textSubmit);
+    task_form_el.appendChild(text_input_el);
+    task_form_el.appendChild(text_submit_el);
 
-        contentBody.appendChild(taskForm);
-        content.appendChild(contentBody);
+        content_body_el.appendChild(task_form_el);
+        content.appendChild(content_body_el);
 }
 
         //Task List
@@ -34,15 +34,15 @@ export var taskList = function(){
 
     //
     const content = document.getElementById("content");
-    const contentBody = document.getElementById("content-body");
+    const content_body_el = document.getElementById("content-body");
 
-    const taskList = document.createElement("section");
-    taskList.classList.add("task-list");
+    const task_list_el = document.createElement("section");
+    task_list_el.classList.add("task-list");
 
         //header
-    const tasksHeader = document.createElement("h2");
-    tasksHeader.classList.add(`h2-index`);
-    tasksHeader.textContent = "Tasks";
+    const task_header_el = document.createElement("h2");
+    task_header_el.classList.add(`h2-index`);
+    task_header_el.textContent = "Tasks";
 
     const tasks = document.createElement("div");
     tasks.setAttribute(`id`, `tasks`);
@@ -51,45 +51,45 @@ export var taskList = function(){
     single_task_el.classList.add('single-task');
     
         //content
-    const taskContent = document.createElement(`div`);
-    taskContent.classList.add(`content`);
+    const task_content_el = document.createElement(`div`);
+    task_content_el.classList.add(`content`);
 
-    const taskInput = document.createElement(`input`);
-    taskInput.setAttribute(`type`, `text`);
-    taskInput.classList.add(`text`);
-    taskInput.setAttribute(`value`, `default task: delete me if you want`);
-    taskInput.setAttribute(`readonly`, `readonly`);
+    const task_input_el = document.createElement(`input`);
+    task_input_el.setAttribute(`type`, `text`);
+    task_input_el.classList.add(`text`);
+    task_input_el.setAttribute(`value`, `default task: delete me if you want`);
+    task_input_el.setAttribute(`readonly`, `readonly`);
 
-    contentBody.appendChild(tasksHeader);
-    taskList.appendChild(tasks);
+    content_body_el.appendChild(task_header_el);
+    task_list_el.appendChild(tasks);
 
-    taskContent.appendChild(taskInput);
-    single_task_el.appendChild(taskContent);
+    task_content_el.appendChild(task_input_el);
+    single_task_el.appendChild(task_content_el);
     
-        contentBody.appendChild(taskList);
-        content.appendChild(contentBody);
+    content_body_el.appendChild(task_list_el);
+        content.appendChild(content_body_el);
 
         //add buttons:
 
     const actions = document.createElement(`div`);
     actions.classList.add(`actions`);
 
-    const editButton = document.createElement(`button`);
-    editButton.classList.add("edit");
-    editButton.textContent = "Edit";
+    const edit_button_el = document.createElement(`button`);
+    edit_button_el.classList.add("edit");
+    edit_button_el.textContent = "-->";
 
-    const deleteButton = document.createElement(`button`);
-    deleteButton.classList.add("delete");
-    deleteButton.textContent = "Delete";
+    const delete_button_el = document.createElement(`button`);
+    delete_button_el.classList.add("delete");
+    delete_button_el.textContent = "Delete";
 
-    actions.appendChild(editButton);
-    actions.appendChild(deleteButton);
+    actions.appendChild(edit_button_el);
+    actions.appendChild(delete_button_el);
     
         single_task_el.appendChild(actions);
         tasks.appendChild(single_task_el);
-        content.appendChild(contentBody);
+        content.appendChild(content_body_el);
 
-        deleteButton.addEventListener(`click`, () => {
+        delete_button_el.addEventListener(`click`, () => {
             tasks.removeChild(single_task_el);            
         })
 }
