@@ -66,12 +66,6 @@ body{
 }
 
 
-.defaultProjects{
-/*
-    border: 1px solid blue;
-*/
-}
-
 .inboxRow, .todayRow, .thisWeekRow, .placeholderProject, .addProjectRow{
     display:grid;
     grid-template-columns: 20px 20px 1fr;
@@ -122,12 +116,6 @@ body{
     margin: 0 0 0 0;
 }
 
-.userProjects{
-    /*
-    border: 1px solid red;
-    */
-}
-
 
 .placeholderProject{
     margin: 20px 0 15px 0;
@@ -156,9 +144,7 @@ body{
     justify-items: center;
     align-items: center;
 }
-/*index*/
-.content{
-}
+
 
 input, button{
     appearance: none;
