@@ -10,16 +10,14 @@ taskHeader();
 taskList();
 
 window.addEventListener(`load`, () => {
-
     task();
-
 })
 
 
 
 
 //inbox button
-var inboxButtonPressed = function(){
+var homeButtonPressed = function(){
     clearExisting();
     taskHeader();
     taskList();
@@ -29,9 +27,9 @@ var inboxButtonPressed = function(){
     })
 }
 
-const inboxButton = document.getElementById("inbox");
-inboxButton.addEventListener(`click`, function(){
-    inboxButtonPressed();
+const homeButton = document.getElementById("home");
+homeButton.addEventListener(`click`, function(){
+    homeButtonPressed();
 })
 
 //
